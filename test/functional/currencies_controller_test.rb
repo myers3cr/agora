@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CurrenciesControllerTest < ActionController::TestCase
   setup do
-    @currency = currencies(:one)
+    @currency = currencies(:foo)
   end
 
   test "should get index" do
