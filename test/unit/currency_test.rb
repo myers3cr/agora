@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class CurrencyTest < ActiveSupport::TestCase
-  fixtures :currencies
   
   test "currency attributes must not be empty" do
     currency = Currency.new
@@ -10,22 +9,31 @@ class CurrencyTest < ActiveSupport::TestCase
     assert currency.errors[:description].any?    
   end
   
-  test "currency iso code must be 3 characters" do
+  test "currency iso code must be 3 uppercase letters" do
     # "three shall be the number of the counting, no more, no less"
     currency = Currency.new(
-      iso_code: "AB",
+      iso_code: "ABC",
       description: "New Currency"
     )
+    assert currency.save #happy path
+    assert !currency.errors[:iso_code].any?
+
+    currency.iso_code = "AB"
     assert !currency.save
-    assert_equal "must be 3 characters", currency.errors[:iso_code].join('; ')
+    assert_equal "must be 3 uppercase letters", currency.errors[:iso_code].join('; ')
     
     currency.iso_code = "ABCD"
     assert !currency.save
-    assert_equal "must be 3 characters", currency.errors[:iso_code].join('; ')
+    assert_equal "must be 3 uppercase letters", currency.errors[:iso_code].join('; ')
    
-   currency.iso_code = "ABC"
-   assert currency.save
-   assert !currency.errors[:iso_code].any? 
+    currency.iso_code = "123"
+    assert !currency.save
+    assert_equal "must be 3 uppercase letters", currency.errors[:iso_code].join('; ')
+
+    currency.iso_code = "abc"
+    assert !currency.save
+    assert_equal "must be 3 uppercase letters", currency.errors[:iso_code].join('; ')
+
   end
   
   test "currency iso code must be unique" do
