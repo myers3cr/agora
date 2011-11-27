@@ -1,14 +1,35 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Pinch Point Systems">
+	<!-- Date: 2011-11-25 -->
   <title>Agora</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body class="<%= controller.controller_name %>">
+	<div id="content">
+		<div id="header">
+			<h1>Agora</h1>
+			<h2>The Marketplace For Print</h2>
+			<div id="navigation">
+				<ul>
+					<li class="selected"><a href="#">Currencies</a></li>
+					<li><a href="#">Organizations</a></li>
+					<li><a href="#">Users</a></li>
+					<li><a href="#">Reports</a></li>
+					<li><a href="#">Preferences</a></li>
+					<li><a href="#">App Settings</a></li>
+				</ul>
+			</div> <!-- end navigation div -->
+		</div> <!-- end header div -->
 
+		<%= yield %>
+
+	</div> <!-- end content div -->
 </body>
 </html>

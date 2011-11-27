@@ -1,4 +1,4 @@
-<h1>Listing currencies</h1>
+<h1>Currencies</h1>
 
 <table>
   <tr>
@@ -13,9 +13,8 @@
   <tr>
     <td><%= currency.iso_code %></td>
     <td><%= currency.description %></td>
-    <td><%= link_to 'Show', currency %></td>
-    <td><%= link_to 'Edit', edit_currency_path(currency) %></td>
-    <td><%= link_to 'Destroy', currency, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to (image_tag("pencil.png", :class => "icon")), edit_currency_path(currency) %></td>
+    <td><%= link_to (image_tag("delete.png", :class => "icon")), currency, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
