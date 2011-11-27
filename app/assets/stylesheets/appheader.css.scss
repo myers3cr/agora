@@ -1,0 +1,22 @@
+#header {
+		#navigation {
+		width: 760px;
+		border-bottom: 3px solid #77d;
+		ul {
+			li {
+				display: inline;
+				list-style-type: none;
+				padding: 5px;
+				a {
+					text-decoration: none;
+				}
+				&.selected {
+					font-weight: bold;
+					a {
+						color: red;
+					}
+				}
+			}
+		}
+	}
+}
