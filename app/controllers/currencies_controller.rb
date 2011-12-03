@@ -60,7 +60,7 @@ class CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.update_attributes(params[:currency])
-        format.html { redirect_to @currency, notice: 'Currency was successfully updated.' }
+        format.html { redirect_to currencies_path, notice: 'Currency was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

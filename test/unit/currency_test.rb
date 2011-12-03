@@ -38,7 +38,7 @@ class CurrencyTest < ActiveSupport::TestCase
   
   test "currency iso code must be unique" do
     currency = Currency.new(
-      iso_code: currencies(:foo).iso_code,
+      iso_code: currencies(:dollar).iso_code,
       description: "New Currency"
     )
     assert !currency.save

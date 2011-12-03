@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-foo:
-  iso_code: FOO
-  description: Foonman Dollar
+dollar:
+  iso_code: DOL
+  description: Dollar
 
-bar:
-  iso_code: BAR
-  description: Bar Tab
+euro:
+  iso_code: EUR
+  description: Euro
