@@ -1,7 +1,6 @@
 class Currency < ActiveRecord::Base
 # TODO figure out why 'upcase!' is undefined when using callback
 # before_validation :upcase_iso
-
 # TODO update so can't delete if there are orgs using the currency
 
   has_many :orgs

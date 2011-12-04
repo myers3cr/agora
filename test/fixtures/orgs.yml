@@ -3,14 +3,14 @@
 buyer:
   org_name: Buyer Org
   org_type: buyer
-  currency_id: 1
+  currency: dollar
 
 supplier:
   org_name: Supplier Org
   org_type: supplier
-  currency_id: 1
+  currency: euro
 
 admin:
   org_name: Admin Org
   org_type: admin
-  currency_id: 1
+  currency: dollar
