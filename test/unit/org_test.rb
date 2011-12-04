@@ -6,7 +6,7 @@ class OrgTest < ActiveSupport::TestCase
     org = Org.new
     assert org.invalid?
     assert org.errors[:org_name].any?
-    assert org.errors[:org_type].any?
+    assert org.errors[:org_type_id].any?
     assert org.errors[:currency_id].any?    
   end
   

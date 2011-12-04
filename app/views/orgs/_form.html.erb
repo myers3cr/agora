@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :org_type %><br />
-    <%= f.text_field :org_type %>
+    <%= collection_select(:org, :org_type_id, OrgType.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :currency_id %><br />

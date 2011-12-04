@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111130014926) do
+ActiveRecord::Schema.define(:version => 20111204135716) do
 
   create_table "currencies", :force => true do |t|
     t.string   "iso_code"
@@ -20,9 +20,15 @@ ActiveRecord::Schema.define(:version => 20111130014926) do
     t.datetime "updated_at"
   end
 
+  create_table "org_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "orgs", :force => true do |t|
     t.string   "org_name"
-    t.string   "org_type"
+    t.integer  "org_type_id", :limit => 255
     t.integer  "currency_id"
     t.datetime "created_at"
     t.datetime "updated_at"

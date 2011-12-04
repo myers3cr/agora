@@ -17,3 +17,11 @@ Currency.create(iso_code: 'BRL', description: 'Brazilian Real')
 Currency.create(iso_code: 'CZK', description: 'Czech Koruna')
 Currency.create(iso_code: 'HUF', description: 'Hungarian Forint')
 Currency.create(iso_code: 'INR', description: 'Indian Rupee')
+
+OrgType.delete_all
+OrgType.create(name: 'Admin')
+OrgType.create(name: 'Buyer')
+OrgType.create(name: 'Supplier')
+
+Org.delete_all
+#TODO add sample orgs
