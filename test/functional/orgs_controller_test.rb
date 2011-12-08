@@ -2,7 +2,7 @@ require 'test_helper'
 
 class OrgsControllerTest < ActionController::TestCase
   setup do
-    @org = orgs(:buyer)
+    @org = orgs(:buyer_org)
   end
 
   test "should get index" do
@@ -18,6 +18,7 @@ class OrgsControllerTest < ActionController::TestCase
 
   test "should create org" do
     assert_difference('Org.count') do
+      @org.org_name = "New and Different Org"
       post :create, org: @org.attributes
     end
     assert_redirected_to orgs_path
