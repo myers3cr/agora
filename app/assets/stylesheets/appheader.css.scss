@@ -8,8 +8,14 @@
 				list-style-type: none;
 				padding: 5px;
 				a {
+				  color: #000;
 					text-decoration: none;
+				  &:hover {
+				    color: #fff;
+				    background-color: #000;
+					}
 				}
+				
 				&.selected {
 					font-weight: bold;
 					a {

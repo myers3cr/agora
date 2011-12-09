@@ -2,7 +2,7 @@ class OrgsController < ApplicationController
   # GET /orgs
   # GET /orgs.json
   def index
-    @orgs = Org.all
+    @orgs = Org.order(:org_name)
 
     respond_to do |format|
       format.html # index.html.erb
