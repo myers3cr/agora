@@ -25,6 +25,8 @@ class OrgsController < ApplicationController
   # GET /orgs/new.json
   def new
     @org = Org.new
+    @org.org_type_id = OrgType.find_by_name('Buyer').id
+    @org.currency_id = Currency.find_by_description('Euro').id
 
     respond_to do |format|
       format.html # new.html.erb
