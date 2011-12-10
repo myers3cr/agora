@@ -1,4 +1,6 @@
 Agora::Application.routes.draw do
+  resources :users
+
   resources :orgs
 
   resources :currencies

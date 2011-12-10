@@ -3,9 +3,9 @@ class Org < ActiveRecord::Base
   belongs_to :currency
   belongs_to :org_type
   
-  validates_presence_of :org_name
-  validates_uniqueness_of :org_name
-  validates_length_of :org_name, :maximum => 32
+  validates_presence_of :name
+  validates_uniqueness_of :name
+  validates_length_of :name, :maximum => 32
   
   validates_presence_of :org_type_id
   

@@ -1,4 +1,4 @@
-<h1>Listing orgs</h1>
+<h1>Organizations</h1>
 <p id="notice"><%= notice %></p>
 <table>
   <tr>
@@ -11,7 +11,7 @@
 
 <% @orgs.each do |org| %>
   <tr>
-    <td><%= org.org_name %></td>
+    <td><%= org.name %></td>
     <td><%= org.org_type.name %></td>
     <td><%= org.currency.iso_code %></td>
     <td><%= link_to (image_tag("pencil.png", :class => "icon")), edit_org_path(org) %></td>

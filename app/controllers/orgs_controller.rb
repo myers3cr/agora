@@ -2,7 +2,7 @@ class OrgsController < ApplicationController
   # GET /orgs
   # GET /orgs.json
   def index
-    @orgs = Org.order(:org_name)
+    @orgs = Org.order(:name)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,7 +46,7 @@ class OrgsController < ApplicationController
 
     respond_to do |format|
       if @org.save
-        format.html { redirect_to orgs_path, notice: 'Org was successfully created.' }
+        format.html { redirect_to orgs_path, notice: "Org #{@org.name} was successfully created." }
         format.json { render json: @org, status: :created, location: @org }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class OrgsController < ApplicationController
 
     respond_to do |format|
       if @org.update_attributes(params[:org])
-        format.html { redirect_to orgs_path, notice: 'Org was successfully updated.' }
+        format.html { redirect_to orgs_path, notice: "Org #{@org.name} was successfully updated." }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -24,4 +24,21 @@ OrgType.create(name: 'Buyer')
 OrgType.create(name: 'Supplier')
 
 Org.delete_all
-#TODO add sample orgs
+Org.create(
+  name:'Xerox',
+  org_type_id: OrgType.find_by_name('Admin').id,
+  currency_id: Currency.find_by_iso_code('USD').id
+)
+Org.create(
+  name: 'Demo Buyer',
+  org_type_id: OrgType.find_by_name('Buyer').id,
+  currency_id: Currency.find_by_iso_code('USD').id
+)
+Org.create(
+  name: 'Demo Supplier',
+  org_type_id: OrgType.find_by_name('Supplier').id,
+  currency_id: Currency.find_by_iso_code('USD').id
+)
+
+User.delete_all
+User.create(name: 'admin', password: 'secret', password_confirmation: 'secret')

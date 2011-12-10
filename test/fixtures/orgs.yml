@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 buyer_org:
-  org_name: Buyer Org
+  name: Buyer Org
   org_type: buyer
   currency: dollar
 
 supplier_org:
-  org_name: Supplier Org
+  name: Supplier Org
   org_type: supplier
   currency: euro
 
 admin_org:
-  org_name: Admin Org
+  name: Admin Org
   org_type: admin
   currency: dollar
