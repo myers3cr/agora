@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111210204737) do
+ActiveRecord::Schema.define(:version => 20111210213000) do
 
   create_table "currencies", :force => true do |t|
     t.string   "iso_code"
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(:version => 20111210204737) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "org_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
   end
 
 end

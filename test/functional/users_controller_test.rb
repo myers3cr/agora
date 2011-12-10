@@ -2,9 +2,14 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
   setup do
-    @user = users(:one)
+    @user = users(:admin_user)
     @input_attributes = {
       name: "Alice",
+      org_id: Org.first.id,
+      first_name: "Alice",
+      last_name: "Toklas",
+      email: "alicebtoklas@stein.com",
+      phone: "(585) 555-1212",
       password: "password",
       password_confirmation: "password"
     }

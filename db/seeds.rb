@@ -41,6 +41,33 @@ Org.create(
 )
 
 User.delete_all
-User.create(name: 'admin', password: 'secret', password_confirmation: 'secret')
-User.create(name: 'buyer', password: 'secret', password_confirmation: 'secret')
-User.create(name: 'supplier', password: 'secret', password_confirmation: 'secret')
+User.create(
+  name: 'admin',
+  first_name: 'Admin',
+  last_name: 'User',
+  org_id: Org.find_by_name('Xerox').id,
+  email: 'admin@nowhere.com',
+  phone: '(585) 555-1212',
+  password: 'secret',
+  password_confirmation: 'secret'
+)
+User.create(
+  name: 'buyer',
+  first_name: 'Buyer',
+  last_name: 'User',
+  org_id: Org.find_by_name('Demo Buyer').id,
+  email: 'buyer@nowhere.com',
+  phone: '(585) 555-1212',
+  password: 'secret',
+  password_confirmation: 'secret'
+)
+User.create(
+  name: 'supplier',
+  first_name: 'Suplier',
+  last_name: 'User',
+  org_id: Org.find_by_name('Demo Supplier').id,
+  email: 'supplier@nowhere.com',
+  phone: '(585) 555-1212',
+  password: 'secret',
+  password_confirmation: 'secret'
+)

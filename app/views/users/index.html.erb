@@ -2,14 +2,22 @@
 <p id="notice"><%= notice %></p>
 <table>
   <tr>
+    <th>Username</th>
+    <th>Organization</th>
     <th>Name</th>
-    <th></th>
-    <th></th>
+    <th>Email</th>
+		<th>Phone</th>
+		<th></th>
+		<th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%= user.name %></td>
+		<td><%= user.org.name %></td>
+		<td><%= user.fullname %></td>
+    <td><%= user.email %></td>
+    <td><%= user.phone %></td>		
     <td><%= link_to (image_tag("pencil.png", :class => "icon")), edit_user_path(user) %></td>
     <td><%= link_to (image_tag("delete.png", :class => "icon")), user, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

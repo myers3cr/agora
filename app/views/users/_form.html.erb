@@ -16,6 +16,26 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :org_id %><br />
+    <%= collection_select(:user, :org_id, Org.order(:name), :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>

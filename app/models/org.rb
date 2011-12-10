@@ -2,6 +2,7 @@ class Org < ActiveRecord::Base
   
   belongs_to :currency
   belongs_to :org_type
+  has_many :users
   
   validates_presence_of :name
   validates_uniqueness_of :name

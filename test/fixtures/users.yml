@@ -1,9 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+admin_user:
+  name: AdminUser
+  org: admin_org
+  first_name: First
+  last_name: Last
+  email: emailString
+  phone: phoneString
   password_digest: MyString
 
-two:
-  name: MyString
+buyer_user:
+  name: BuyerUser
+  org: buyer_org
+  first_name: First
+  last_name: Last
+  email: emailString
+  phone: phoneString
+  password_digest: MyString
+
+supplier_user:
+  name: SupplierUser
+  org: supplier_org
+  first_name: First
+  last_name: Last
+  email: emailString
+  phone: phoneString
   password_digest: MyString
