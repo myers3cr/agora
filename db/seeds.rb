@@ -42,3 +42,5 @@ Org.create(
 
 User.delete_all
 User.create(name: 'admin', password: 'secret', password_confirmation: 'secret')
+User.create(name: 'buyer', password: 'secret', password_confirmation: 'secret')
+User.create(name: 'supplier', password: 'secret', password_confirmation: 'secret')
