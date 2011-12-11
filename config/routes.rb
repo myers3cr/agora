@@ -1,8 +1,14 @@
 Agora::Application.routes.draw do
+  get "main" => 'main#index'
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+  
   resources :users
-
   resources :orgs
-
   resources :currencies
 
   # The priority is based upon order of creation:

@@ -7,7 +7,7 @@ admin_user:
   last_name: Last
   email: emailString
   phone: phoneString
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
 
 buyer_user:
   name: BuyerUser
@@ -16,7 +16,7 @@ buyer_user:
   last_name: Last
   email: emailString
   phone: phoneString
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
 
 supplier_user:
   name: SupplierUser
@@ -25,4 +25,4 @@ supplier_user:
   last_name: Last
   email: emailString
   phone: phoneString
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
