@@ -1,4 +1,4 @@
-<h1>High Howdy Hay Buckaroos</h1>
+<h1>Hi Howdy Hey Buckaroos</h1>
 <% if session[:user_id] %>
 	<p>Logged in as: <%= User.find(session[:user_id]).name %></p>
 	<p><%= link_to 'Logout', logout_path, method: :delete %></p>
