@@ -24,6 +24,6 @@
     <%= collection_select(:org, :currency_id, Currency.order(:iso_code), :id, :description) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save" %>&nbsp;<%= link_to 'Cancel', orgs_path %>
   </div>
 <% end %>

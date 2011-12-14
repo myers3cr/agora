@@ -1,6 +1,6 @@
 <h1>Hi Howdy Hey Buckaroos</h1>
 <% if session[:user_id] %>
-	<p>Logged in as: <%= User.find(session[:user_id]).name %></p>
+	<p>Logged in as: <%= User.find(session[:user_id]).full_name %> from <%= User.find(session[:user_id]).org.name %></p>
 	<p><%= link_to 'Logout', logout_path, method: :delete %></p>
 <% else %>
 	<p><%= link_to 'Login', login_path %></p>
