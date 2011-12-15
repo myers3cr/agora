@@ -16,7 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :org_type %><br />
+    <%= f.label :org_type, "Organization type" %><br />
     <%= collection_select(:org, :org_type_id, OrgType.all, :id, :name) %>
   </div>
   <div class="field">
