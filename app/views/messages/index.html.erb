@@ -1,0 +1,27 @@
+<h1>Listing messages</h1>
+
+<table>
+  <tr>
+    <th>Headline</th>
+    <th>Content</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messages.each do |message| %>
+  <tr>
+    <td><%= truncate(message.headline, :length => 25) %></td>
+    <td><%= truncate(message.content, :length => 25) %></td>
+    <td><%= message.start_date %></td>
+    <td><%= message.end_date %></td>
+    <td><%= link_to (image_tag("pencil.png", :class => "icon")), edit_message_path(message) %></td>
+    <td><%= link_to (image_tag("delete.png", :class => "icon")), message, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Message', new_message_path %>

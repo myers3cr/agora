@@ -1,21 +1,21 @@
 #header {
 		#navigation {
-		width: 760px;
 		border-bottom: 3px solid #77d;
 		ul {
+			background-color: #ddd;
 			li {
-				display: inline;
-				list-style-type: none;
-				padding: 5px;
-				a {
-				  color: #000;
-					text-decoration: none;
-				  &:hover {
-				    color: #fff;
-				    background-color: #000;
-					}
+			display: inline;
+			list-style-type: none;
+			padding: 5px;
+			a {
+			  color: #000;
+				text-decoration: none;
+			  &:hover {
+			    color: #fff;
+			    background-color: #000;
 				}
-				
+			}
+			
 				&.selected {
 					font-weight: bold;
 					a {

@@ -16,17 +16,21 @@
 		<div id="header">
 			<h1>Agora</h1>
 			<h2>The World's Marketplace&trade;</h2>
-			<div id="navigation">
-				<ul>
-					<li><%= link_to 'Home', main_path %></li>
-					<li><%= link_to "Currencies", currencies_path %></li>
-					<li><%= link_to "Organizations", orgs_path %></li>
-					<li><%= link_to "Users", users_path %></li>
-					<li><a href="#">Reports</a></li>
-					<li><a href="#">Preferences</a></li>
-					<li><a href="#">App Settings</a></li>
-				</ul>
-			</div> <!-- end navigation div -->
+				<div id="navigation">
+					<% if session[:user_id] %>
+					<p>Logged in as: <%= User.find(session[:user_id]).name %> | <%= link_to 'Logout', logout_path, method: :delete %></p>
+						<ul>
+							<li><%= link_to 'Home', main_path %></li>
+							<li><%= link_to "Currencies", currencies_path %></li>
+							<li><%= link_to "Organizations", orgs_path %></li>
+							<li><%= link_to "Users", users_path %></li>
+							<li><%= link_to "Messages", messages_path%></li>
+							<li><a href="#">Reports</a></li>
+							<li><a href="#">Preferences</a></li>
+							<li><a href="#">App Settings</a></li>
+						</ul>
+					<% end %>						
+				</div> <!-- end navigation div -->
 		</div> <!-- end header div -->
 
 		<%= yield %>

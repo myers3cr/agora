@@ -1,4 +1,6 @@
 Agora::Application.routes.draw do
+  resources :messages
+
   get "main" => 'main#index'
 
   controller :sessions do
