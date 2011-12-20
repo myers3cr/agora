@@ -1,4 +1,6 @@
 <h1>News from the Agora team</h1>
-<h2><%= @message.headline %></h2>
-<h3>Posted: <%= @message.start_date %></h3>
-<p><%= @message.content %></p>
+<% @messages.each do |message| %>
+	<h2><%= message.headline %></h2>
+	<p>Posted: <%= message.start_date %></p>
+	<p><%= message.content %></p>
+<% end %>
