@@ -1,6 +1,6 @@
-<h1>News from the Agora team</h1>
+<h2>News from the Agora team</h2>
 <% @messages.each do |message| %>
-	<h2><%= message.headline %></h2>
+	<h3><%= message.headline %></h3>
 	<p>Posted: <%= message.start_date %></p>
 	<p><%= message.content %></p>
 <% end %>
