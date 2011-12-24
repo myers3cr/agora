@@ -2,7 +2,6 @@
   <% if @org.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@org.errors.count, "error") %> prohibited this org from being saved:</h2>
-
       <ul>
       <% @org.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,6 +10,8 @@
     </div>
   <% end %>
 
+<fieldset>
+	<legend><%= controller.action_name.capitalize + " Organization" %></legend>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -23,6 +24,8 @@
     <%= f.label :currency_id %><br />
     <%= collection_select(:org, :currency_id, Currency.order(:iso_code), :id, :description) %>
   </div>
+</fieldset>
+
   <div class="actions">
     <%= f.submit "Save" %>&nbsp;<%= link_to 'Cancel', orgs_path %>
   </div>

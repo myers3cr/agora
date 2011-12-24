@@ -1,0 +1,38 @@
+fieldset {
+	border: none;
+	legend {
+		font-size: 1.7em;
+		font-weight: normal;
+		color: #505050;
+		padding-left: 146px;
+	}
+}
+.field {
+	padding: 1em 1em 0 1em;
+	label {
+		display: inline-block;
+		width: 120px;
+		padding-right: 12px;
+		text-align: right;
+		vertical-align: top;
+	}
+	br {
+		display: none;
+	}
+}
+.field_with_errors {
+	padding: 1em 1em 0 1em;
+	label {
+		display: inline-block;
+		width: 120px;
+		padding-right: 12px;
+		text-align: right;
+		vertical-align: top;
+	}
+	br {
+		display: none;
+	}
+}
+.actions {
+	padding: 12px 12px 0 146px;
+}

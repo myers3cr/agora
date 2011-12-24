@@ -78,3 +78,4 @@ img.right {float:right; margin:0 0 5px 12px;}
 .textright {text-align:right;}
 .important {color:#f02025; background-color:inherit; font-weight:bold;}
 .box {margin:0 0 20px 0; padding:10px; border:1px solid #c0c0c0; background-color:#fafbfc; color:#505050; line-height:1.5em;}
+#notice {color: green;}

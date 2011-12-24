@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
+<fieldset>
+	<legend><%= legend %></legend>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :org_id %><br />
+    <%= f.label :org_id, "Organization" %><br />
     <%= collection_select(:user, :org_id, Org.order(:name), :id, :name) %>
   </div>
   <div class="field">
@@ -40,9 +42,10 @@
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "Confirm password" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
+</fieldset>
   <div class="actions">
     <%= f.submit "Save" %>&nbsp;<%= link_to 'Cancel', users_path %>
   </div>
