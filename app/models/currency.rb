@@ -1,6 +1,7 @@
 class Currency < ActiveRecord::Base
-# TODO figure out why 'upcase!' is undefined when using callback
-# before_validation :upcase_iso
+
+  before_validation :upcase_iso
+
 # TODO update so can't delete if there are orgs using the currency
 
   has_many :orgs
@@ -10,9 +11,9 @@ class Currency < ActiveRecord::Base
   
   validates_presence_of :description
   validates_length_of :description, :maximum => 32
-  
+
   def upcase_iso
-    self.iso_code.upcase!
+    self.iso_code.upcase! if self.iso_code
   end
   
 end
