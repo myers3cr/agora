@@ -9,4 +9,5 @@ class Message < ActiveRecord::Base
   
   validates_presence_of :end_date
   
+  scope :current, where("start_date <= ? and end_date >= ?", Time.now, Time.now)
 end

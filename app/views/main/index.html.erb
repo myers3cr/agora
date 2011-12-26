@@ -1,6 +1,13 @@
 <h2>News from the Agora team</h2>
-<% @messages.each do |message| %>
-	<h3><%= message.headline %></h3>
-	<p>Posted: <%= message.start_date %></p>
-	<p><%= message.content %></p>
+<% if @messages.count == 0 %>
+	<div class="default">
+		<p>No news is good news!</p>
+	</div> <!-- end default div -->
+	<% else @messages.each do |message| %>
+		<div class="message">
+			<h3 class="headline" ><%= message.headline %></h3>
+			<p class="small" >Posted: <%= message.start_date %></p>
+			<p><%= message.content %></p>
+		</div> <!-- end message div -->
+	<% end %>
 <% end %>

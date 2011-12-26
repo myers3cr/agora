@@ -1,13 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+old:
   headline: MyString
   content: MyText
-  start_date: 2011-12-16 20:35:23
-  end_date: 2011-12-16 20:35:23
+  start_date: <%= 1.year.ago %>
+  end_date: <%= 1.year.ago - 7.days %>
 
-two:
+current_one:
   headline: MyString
   content: MyText
-  start_date: 2011-12-16 20:35:23
-  end_date: 2011-12-16 20:35:23
+  start_date: <%= 6.days.ago %>
+  end_date: <%= Time.now + 7.days %>
+
+current_two:
+  headline: MyString
+  content: MyText
+  start_date: <%= 1.day.ago %>
+  end_date: <%= Time.now + 7.days %>
+
+future:
+  headline: MyString
+  content: MyText
+  start_date: <%= Time.now + 7.days %>
+  end_date: <%= Time.now + 30.days %>

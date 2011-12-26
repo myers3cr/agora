@@ -33,4 +33,6 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 	gem 'minitest'
+	# crm added these
+	gem 'factory_girl_rails'
 end

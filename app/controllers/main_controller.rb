@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def index
-    @messages = Message.last(3)
+    @messages = Message.current
   end
 
 end

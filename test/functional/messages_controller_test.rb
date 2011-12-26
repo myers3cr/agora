@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MessagesControllerTest < ActionController::TestCase
   setup do
-    @message = messages(:one)
+    @message = messages(:current_one)
   end
 
   test "should get index" do
@@ -20,7 +20,6 @@ class MessagesControllerTest < ActionController::TestCase
     assert_difference('Message.count') do
       post :create, message: @message.attributes
     end
-
     assert_redirected_to messages_path
   end
 
@@ -43,7 +42,6 @@ class MessagesControllerTest < ActionController::TestCase
     assert_difference('Message.count', -1) do
       delete :destroy, id: @message.to_param
     end
-
     assert_redirected_to messages_path
   end
 end
