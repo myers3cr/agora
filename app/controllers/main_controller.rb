@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def index
-    @messages = Message.current
+    @messages = Message.current.order(:start_date)
   end
 
 end
