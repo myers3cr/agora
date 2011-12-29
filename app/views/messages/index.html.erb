@@ -16,8 +16,8 @@
     <td><%= truncate(message.content, :length => 25) %></td>
     <td><%= message.start_date %></td>
     <td><%= message.end_date %></td>
-    <td><%= link_to (image_tag("pencil.png", :class => "icon")), edit_message_path(message) %></td>
-    <td><%= link_to (image_tag("delete.png", :class => "icon")), message, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="icon"><%= link_to (image_tag("pencil.png", :class => "icon")), edit_message_path(message) %></td>
+    <td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), message, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

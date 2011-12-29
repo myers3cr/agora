@@ -18,8 +18,8 @@
 		<td><%= user.full_name %></td>
     <td><%= user.email %></td>
     <td><%= user.phone %></td>		
-    <td><%= link_to (image_tag("pencil.png", :class => "icon")), edit_user_path(user) %></td>
-    <td><%= link_to (image_tag("delete.png", :class => "icon")), user, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="icon"><%= link_to (image_tag("pencil.png", :class => "icon")), edit_user_path(user) %></td>
+    <td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), user, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
