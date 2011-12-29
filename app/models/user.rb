@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   belongs_to :org
   
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: { :case_sensitive => false }
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :org_id, presence: true
