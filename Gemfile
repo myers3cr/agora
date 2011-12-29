@@ -36,3 +36,5 @@ group :test do
 	# crm added these
 	gem 'factory_girl_rails'
 end
+
+gem 'will_paginate', '~> 3.0'
