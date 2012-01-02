@@ -27,7 +27,7 @@ class MessageTest < ActiveSupport::TestCase
 
   test "must find current messages" do
     messages = Message.current
-    assert_equal 2, messages.size
+    assert_equal 3, messages.size
   end
 
 end

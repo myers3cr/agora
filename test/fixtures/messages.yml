@@ -18,6 +18,12 @@ current_two:
   start_date: <%= 1.day.ago %>
   end_date: <%= Time.now + 7.days %>
 
+current_three:
+  headline: MyString
+  content: MyText
+  start_date: <%= 1.day.ago %>
+  end_date: <%= Time.now + 7.days %>
+
 future:
   headline: MyString
   content: MyText

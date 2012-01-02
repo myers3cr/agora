@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  attr_accessible :name, :first_name, :last_name, :org_id, :email, :phone, :password, :password_confirmation
 
   belongs_to :org
   
