@@ -18,6 +18,11 @@ class CurrencyTest < ActiveSupport::TestCase
     assert currency.save #happy path
     assert !currency.errors[:iso_code].any?
 
+    # model automatically converts iso code to uppercase, so lowercase should work
+    currency.iso_code = "abc"
+    assert currency.save
+    assert !currency.errors[:iso_code].any?
+
     currency.iso_code = "AB"
     assert !currency.save
     assert_equal "must be 3 uppercase letters", currency.errors[:iso_code].join('; ')
@@ -29,10 +34,6 @@ class CurrencyTest < ActiveSupport::TestCase
     currency.iso_code = "123"
     assert !currency.save
     assert_equal "must be 3 uppercase letters", currency.errors[:iso_code].join('; ')
-
-    currency.iso_code = "abc"
-    assert currency.save
-#    assert_equal "must be 3 uppercase letters", currency.errors[:iso_code].join('; ')
 
   end
   
