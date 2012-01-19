@@ -5,7 +5,7 @@ class UserTest < ActiveSupport::TestCase
     user = User.new
     assert user.invalid?
     assert user.errors[:name].any?, "name error"
-    assert !user.errors[:org].any?, "org error"
+    assert user.errors[:org_id].any?, "org error"
     assert user.errors[:first_name].any?, "first name error"
     assert user.errors[:last_name].any?, "last name error"
     assert user.errors[:email].any?, "email error"
