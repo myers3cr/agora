@@ -1,26 +1,26 @@
 <h2>Users</h2>
 <% if notice %><p id="notice"><%= notice %></p><% end %>
 <table>
-  <tr>
-    <th>Username</th>
-    <th>Organization</th>
-    <th>Name</th>
-    <th>Email</th>
+	<tr>
+		<th>Username</th>
+		<th>Organization</th>
+		<th>Full Name</th>
+		<th>Email</th>
 		<th>Phone</th>
 		<th></th>
 		<th></th>
-  </tr>
+	</tr>
 
 <% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
+	<tr>
+		<td><%= user.name %></td>
 		<td><%= user.org.name %></td>
 		<td><%= user.full_name %></td>
-    <td><%= user.email %></td>
-    <td><%= user.phone %></td>		
-    <td class="icon"><%= link_to (image_tag("pencil.png", :class => "icon")), edit_user_path(user) %></td>
-    <td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), user, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+		<td><%= user.email %></td>
+		<td><%= user.phone %></td>		
+		<td class="icon"><%= link_to (image_tag("pencil.png", :class => "icon")), edit_user_path(user) %></td>
+		<td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), user, confirm: "Permanently delete #{user.name}?", method: :delete %></td>
+	</tr>
 <% end %>
 </table>
 
