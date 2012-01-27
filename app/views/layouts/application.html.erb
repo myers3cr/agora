@@ -16,7 +16,7 @@
 
 		<div id="header">
 			<% if session[:user_id] %>
-				<p>Logged in as: <%= current_user.name %> | <%= link_to 'Logout', logout_path, method: :delete %>
+				<p>Logged in as: <%= current_user.username %> | <%= link_to 'Logout', logout_path, method: :delete %>
 				</p>
 			<% end %>
 			<h1>Agora</h1>

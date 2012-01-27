@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 admin_user:
-  name: AdminUser
+  username: AdminUser
   org: admin_org
   first_name: First
   last_name: Last
@@ -10,7 +10,7 @@ admin_user:
   password_digest: <%= BCrypt::Password.create('secret') %>
 
 buyer_user:
-  name: BuyerUser
+  username: BuyerUser
   org: buyer_org
   first_name: First
   last_name: Last
@@ -19,7 +19,7 @@ buyer_user:
   password_digest: <%= BCrypt::Password.create('secret') %>
 
 supplier_user:
-  name: SupplierUser
+  username: SupplierUser
   org: supplier_org
   first_name: First
   last_name: Last

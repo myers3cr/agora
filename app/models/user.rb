@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :first_name, :last_name, :org_id, :email, :phone, :password, :password_confirmation
+  attr_accessible :username, :first_name, :last_name, :org_id, :email, :phone, :password, :password_confirmation
 
   belongs_to :org
   
-  validates :name, presence: true, uniqueness: { :case_sensitive => false }
+  validates :username, presence: true, uniqueness: { :case_sensitive => false }
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :org_id, presence: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111217013523) do
+ActiveRecord::Schema.define(:version => 20120127024416) do
 
   create_table "currencies", :force => true do |t|
     t.string   "iso_code"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20111217013523) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
+    t.string   "username"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"

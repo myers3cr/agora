@@ -4,7 +4,7 @@ class UsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:admin_user)
     @input_attributes = {
-      name: "Alice",
+      username: "Alice",
       org_id: Org.first.id,
       first_name: "Alice",
       last_name: "Toklas",
