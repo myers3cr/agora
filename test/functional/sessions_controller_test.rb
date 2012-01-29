@@ -13,7 +13,13 @@ class SessionsControllerTest < ActionController::TestCase
     assert_equal admin.id, session[:user_id]
   end
 
-  test "should fail login" do
+  test "wrong username should fail login" do
+    admin = users(:admin_user)
+    post :create, username: 'nosuchuser', password: 'secret'
+    assert_redirected_to login_url
+  end
+
+  test "wrong password should fail login" do
     admin = users(:admin_user)
     post :create, username: admin.username, password: 'baddog'
     assert_redirected_to login_url
