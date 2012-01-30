@@ -12,7 +12,7 @@ class CurrencyTest < ActiveSupport::TestCase
     assert currency.errors[:description].any?    
   end
 
-  test "3 uppercase letters are OK" do
+  test "3 uppercase letters should pass" do
     # "three shall be the number of the counting, no more, no less"
     currency = Currency.new(
       iso_code: "ABC",
@@ -22,7 +22,7 @@ class CurrencyTest < ActiveSupport::TestCase
     assert !currency.errors[:iso_code].any?
   end
 
-  test "3 lowercase letters are OK" do
+  test "3 lowercase letters should pass" do
     # model automatically converts iso code to uppercase, so lowercase should work
     currency = Currency.new(
       iso_code: "abc",
@@ -77,15 +77,6 @@ class CurrencyTest < ActiveSupport::TestCase
     assert_equal "has already been taken", currency.errors[:iso_code].join('; ')
   end
 
-  test "description longer than 32 characters should fail" do
-    currency = Currency.new(
-      iso_code: "ABC",
-      description: "123456789012345678901234567890123"
-    )
-    assert !currency.save
-    assert_equal "is too long (maximum is 32 characters)", currency.errors[:description].join("; ")
-  end
-  
   test "description of 32 characters should pass" do
     currency = Currency.new(
       iso_code: "ABC",
@@ -93,6 +84,15 @@ class CurrencyTest < ActiveSupport::TestCase
     )
     assert currency.save
     assert !currency.errors[:description].any?
+  end
+
+  test "description longer than 32 characters should fail" do
+    currency = Currency.new(
+      iso_code: "ABC",
+      description: "123456789012345678901234567890123"
+    )
+    assert !currency.save
+    assert_equal "is too long (maximum is 32 characters)", currency.errors[:description].join("; ")
   end
 
 end

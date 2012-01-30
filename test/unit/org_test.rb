@@ -18,15 +18,15 @@ class OrgTest < ActiveSupport::TestCase
     assert_equal "has already been taken", org.errors[:name].join('; ')
   end
   
-  test "org name must be 32 characters or less" do
+  test "org name of 32 characters should pass" do
     org = orgs(:buyer_org)
-
-    # 32 characters should pass
     org.name = "12345678901234567890123456789012"
     assert org.save
     assert !org.errors[:name].any?
+  end
 
-    # 33 characters should fail
+  test "org name longer than 32 characters should fail" do
+    org = orgs(:buyer_org)
     org.name = "123456789012345678901234567890123"
     assert !org.save
     assert_equal "is too long (maximum is 32 characters)", org.errors[:name].join("; ")    
