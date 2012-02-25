@@ -19,7 +19,7 @@ img.right {float:right; margin:0 0 5px 12px;}
 /* Header and navigation styles */
 #container {width:960px; margin:20px auto; padding:1px 0; text-align:left; background:#ffffff; color:#303030; border:2px solid #a0a0a0;}
 #header {height:110px; width:958px; margin:0 1px 1px 1px; background:#467aa7; color:#ffffff;}
-#header h1 {padding:27px 0 .25em 20px; font-size:2.4em; background-color:inherit; color:#ffffff; letter-spacing:-2px; font-weight:normal; }
+#header h1 {padding:27px 0 .25em 20px; font-size:2.4em; background-color:inherit; color:#ffffff; letter-spacing:0px; font-weight:normal; }
 #header h2 {margin:10px 0 0 40px; font-size:1.4em; background-color:inherit; color:#f0f2f4; letter-spacing:0px; font-weight:normal;}
 #header p {float: right; padding: 5px 10px 0 0; font-size: 85%; }
 #header a {color: #ffffff; }
