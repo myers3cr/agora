@@ -9,11 +9,11 @@ Agora::Application.routes.draw do
   end
   
   resources :users
-  resources :orgs
 
   namespace :admin do
     resources :currencies
     resources :messages
+    resources :orgs
   end
 
   # The priority is based upon order of creation:

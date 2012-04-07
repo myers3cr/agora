@@ -1,4 +1,4 @@
-class OrgsController < ApplicationController
+class Admin::OrgsController < ApplicationController
   # GET /orgs
   # GET /orgs.json
   def index
@@ -47,7 +47,7 @@ class OrgsController < ApplicationController
 
     respond_to do |format|
       if @org.save
-        format.html { redirect_to orgs_path, notice: "Org #{@org.name} was successfully created." }
+        format.html { redirect_to admin_orgs_path, notice: "Org #{@org.name} was successfully created." }
         format.json { render json: @org, status: :created, location: @org }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ class OrgsController < ApplicationController
 
     respond_to do |format|
       if @org.update_attributes(params[:org])
-        format.html { redirect_to orgs_path, notice: "Org #{@org.name} was successfully updated." }
+        format.html { redirect_to admin_orgs_path, notice: "Org #{@org.name} was successfully updated." }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -79,7 +79,7 @@ class OrgsController < ApplicationController
     @org.destroy
 
     respond_to do |format|
-      format.html { redirect_to orgs_url }
+      format.html { redirect_to admin_orgs_url }
       format.json { head :ok }
     end
   end

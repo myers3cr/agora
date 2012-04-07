@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OrgsControllerTest < ActionController::TestCase
+class Admin::OrgsControllerTest < ActionController::TestCase
   setup do
     @org = orgs(:buyer_org)
   end
@@ -21,7 +21,7 @@ class OrgsControllerTest < ActionController::TestCase
       @org.name = "New and Different Org"
       post :create, org: @org.attributes
     end
-    assert_redirected_to orgs_path
+    assert_redirected_to admin_orgs_path
   end
 
   test "should show org" do
@@ -36,13 +36,13 @@ class OrgsControllerTest < ActionController::TestCase
 
   test "should update org" do
     put :update, id: @org.to_param, org: @org.attributes
-    assert_redirected_to orgs_path
+    assert_redirected_to admin_orgs_path
   end
 
   test "should destroy org" do
     assert_difference('Org.count', -1) do
       delete :destroy, id: @org.to_param
     end
-    assert_redirected_to orgs_path
+    assert_redirected_to admin_orgs_path
   end
 end

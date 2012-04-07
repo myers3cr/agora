@@ -1,4 +1,4 @@
-<%= form_for(@org) do |f| %>
+<%= form_for ([:admin, @org]) do |f| %>
   <% if @org.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@org.errors.count, "error") %> prohibited this org from being saved:</h2>
@@ -27,6 +27,6 @@
 </fieldset>
 
   <div class="actions">
-    <%= f.submit "Save" %>&nbsp;<%= link_to 'Cancel', orgs_path %>
+    <%= f.submit "Save" %>&nbsp;<%= link_to 'Cancel', admin_orgs_path %>
   </div>
 <% end %>
