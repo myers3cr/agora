@@ -6,7 +6,7 @@ class CurrencyTest < ActiveSupport::TestCase
   end
 
   test "currency attributes must not be empty" do
-    currency = Admin::Currency.new
+    currency = Currency.new
     assert currency.invalid?
     assert currency.errors[:iso_code].any?
     assert currency.errors[:description].any?    

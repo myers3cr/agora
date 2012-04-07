@@ -1,5 +1,4 @@
 Agora::Application.routes.draw do
-  resources :messages
 
   get "main" => 'main#index'
 
@@ -14,6 +13,7 @@ Agora::Application.routes.draw do
 
   namespace :admin do
     resources :currencies
+    resources :messages
   end
 
   # The priority is based upon order of creation:

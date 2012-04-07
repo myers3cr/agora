@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MessagesControllerTest < ActionController::TestCase
+class Admin::MessagesControllerTest < ActionController::TestCase
   setup do
     @message = messages(:current_one)
   end
@@ -20,7 +20,7 @@ class MessagesControllerTest < ActionController::TestCase
     assert_difference('Message.count') do
       post :create, message: @message.attributes
     end
-    assert_redirected_to messages_path
+    assert_redirected_to admin_messages_path
   end
 
   test "should show message" do
@@ -35,13 +35,13 @@ class MessagesControllerTest < ActionController::TestCase
 
   test "should update message" do
     put :update, id: @message.to_param, message: @message.attributes
-    assert_redirected_to messages_path
+    assert_redirected_to admin_messages_path
   end
 
   test "should destroy message" do
     assert_difference('Message.count', -1) do
       delete :destroy, id: @message.to_param
     end
-    assert_redirected_to messages_path
+    assert_redirected_to admin_messages_path
   end
 end
