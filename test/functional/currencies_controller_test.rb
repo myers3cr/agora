@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CurrenciesControllerTest < ActionController::TestCase
+class Admin::CurrenciesControllerTest < ActionController::TestCase
   setup do
     @currency = currencies(:dollar)
   end
@@ -21,7 +21,7 @@ class CurrenciesControllerTest < ActionController::TestCase
       @currency.iso_code = 'ZOT'
       post :create, currency: @currency.attributes
     end
-    assert_redirected_to currencies_path
+    assert_redirected_to admin_currencies_path
   end
 
   test "should show currency" do
@@ -36,7 +36,7 @@ class CurrenciesControllerTest < ActionController::TestCase
 
   test "should update currency" do
     put :update, id: @currency.to_param, currency: @currency.attributes
-    assert_redirected_to currencies_path
+    assert_redirected_to admin_currencies_path
   end
 
   test "should destroy currency" do
@@ -44,6 +44,6 @@ class CurrenciesControllerTest < ActionController::TestCase
       delete :destroy, id: @currency.to_param
     end
 
-    assert_redirected_to currencies_path
+    assert_redirected_to admin_currencies_path
   end
 end

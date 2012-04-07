@@ -1,4 +1,4 @@
-<%= form_for(@currency) do |f| %>
+<%= form_for ([:admin, @currency]) do |f| %>
   <% if @currency.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@currency.errors.count, "error") %> prohibited this currency from being saved:</h2>
@@ -23,6 +23,6 @@
 </fieldset>
 
   <div class="actions">
-    <%= f.submit "Save" %>&nbsp;<%= link_to 'Cancel', currencies_path %>
+    <%= f.submit "Save" %>&nbsp;<%= link_to 'Cancel', admin_currencies_path %>
   </div>
 <% end %>
