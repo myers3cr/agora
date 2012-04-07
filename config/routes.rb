@@ -7,13 +7,12 @@ Agora::Application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
-  
-  resources :users
 
   namespace :admin do
     resources :currencies
     resources :messages
     resources :orgs
+    resources :users
   end
 
   # The priority is based upon order of creation:

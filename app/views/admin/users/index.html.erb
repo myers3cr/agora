@@ -18,12 +18,12 @@
 		<td><%= user.full_name %></td>
 		<td><%= user.email %></td>
 		<td><%= user.phone %></td>		
-		<td class="icon"><%= link_to (image_tag("pencil.png", :class => "icon")), edit_user_path(user) %></td>
-		<td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), user, confirm: "Permanently delete #{user.username}?", method: :delete %></td>
+		<td class="icon"><%= link_to (image_tag("pencil.png", :class => "icon")), edit_admin_user_path(user) %></td>
+		<td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), admin_user_path(user), confirm: "Permanently delete #{user.username}?", method: :delete %></td>
 	</tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_admin_user_path %>

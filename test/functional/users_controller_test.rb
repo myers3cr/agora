@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UsersControllerTest < ActionController::TestCase
+class Admin::UsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:admin_user)
     @input_attributes = {
@@ -30,7 +30,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_difference('User.count') do
       post :create, user: @input_attributes
     end
-    assert_redirected_to users_path
+    assert_redirected_to admin_users_path
   end
 
   test "should show user" do
@@ -45,13 +45,13 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should update user" do
     put :update, id: @user.to_param, user: @input_attributes
-    assert_redirected_to users_path
+    assert_redirected_to admin_users_path
   end
 
   test "should destroy user" do
     assert_difference('User.count', -1) do
       delete :destroy, id: @user.to_param
     end
-    assert_redirected_to users_path
+    assert_redirected_to admin_users_path
   end
 end
