@@ -13,7 +13,7 @@
     <td><%= currency.iso_code %></td>
     <td><%= currency.description %></td>
     <td class="icon"><%= link_to (image_tag("pencil.png", :class => "icon")), edit_admin_currency_path(currency) %></td>
-    <td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), admin_currency_path(currency), confirm: 'Are you sure?', method: :delete %></td>
+    <td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), admin_currency_path(currency), data: { confirm: 'Are you sure?', method: :delete } %></td>
   </tr>
 <% end %>
 </table>

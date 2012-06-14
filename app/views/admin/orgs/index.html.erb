@@ -15,7 +15,7 @@
     <td><%= org.org_type.name %></td>
     <td><%= org.currency.iso_code %></td>
     <td class="icon"><%= link_to (image_tag("pencil.png", :class => "icon")), edit_admin_org_path(org) %></td>
-    <td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), admin_org_path(org), confirm: 'Are you sure?', method: :delete %></td>
+    <td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), admin_org_path(org), data: { confirm: 'Are you sure?', method: :delete } %></td>
   </tr>
 <% end %>
 </table>
