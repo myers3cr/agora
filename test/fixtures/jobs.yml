@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  jobname: MyString
+  status: MyString
+  category: MyString
+  customer: MyString
+  description: MyString
+  instructions: MyText
+  bid_due: 2012-06-19 17:32:46
+  delivery_due: 2012-06-19 17:32:46
+
+two:
+  jobname: MyString
+  status: MyString
+  category: MyString
+  customer: MyString
+  description: MyString
+  instructions: MyText
+  bid_due: 2012-06-19 17:32:46
+  delivery_due: 2012-06-19 17:32:46

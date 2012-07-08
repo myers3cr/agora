@@ -1,5 +1,7 @@
 Agora::Application.routes.draw do
 
+  resources :jobs
+
   get "main" => 'main#index'
 
   controller :sessions do
