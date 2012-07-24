@@ -18,7 +18,7 @@ class JobsControllerTest < ActionController::TestCase
 
   test "should create job" do
     assert_difference('Job.count') do
-      post :create, job: {  }
+      post :create, job: @job.attributes
     end
 
     assert_redirected_to jobs_path
