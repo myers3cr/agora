@@ -7,8 +7,8 @@ one:
   customer: MyString
   description: MyString
   instructions: MyText
-  bid_due: 2012-06-19 17:32:46
-  delivery_due: 2012-06-19 17:32:46
+  bid_due: <%= Time.now + 2.hours %>
+  delivery_due: <%= Time.now + 1.day %>
 
 two:
   jobname: MyString
@@ -17,5 +17,5 @@ two:
   customer: MyString
   description: MyString
   instructions: MyText
-  bid_due: 2012-06-19 17:32:46
-  delivery_due: 2012-06-19 17:32:46
+  bid_due: <%= Time.now + 2.hours %>
+  delivery_due: <%= Time.now + 1.day %>

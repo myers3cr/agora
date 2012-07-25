@@ -35,7 +35,9 @@ class JobsControllerTest < ActionController::TestCase
   end
 
   test "should update job" do
-    put :update, id: @job, job: {  }
+    # put :update, id: @currency.to_param, currency: @currency.attributes
+    
+    put :update, id: @job.to_param, job: @job.attributes
     assert_redirected_to jobs_path
   end
 

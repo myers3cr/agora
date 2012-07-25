@@ -4,12 +4,8 @@ class Job < ActiveRecord::Base
   validates_presence_of :jobname
   validates_presence_of :status
   validates_presence_of :description
-  # these seem to be handled by the validate lines, below
-  # validates_presence_of :bid_due
-  # validates_presence_of :delivery_due
   
-  validate :bid_due_one_hour_in_future
-  validate :delivery_due_after_bid_due
+  validate :bid_due_one_hour_in_future, :delivery_due_after_bid_due
   
  
 private
