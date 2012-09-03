@@ -14,8 +14,8 @@ describe Job do
     FactoryGirl.build(:job, jobname: nil).should be_invalid
   end
   
-  it "is invalid without a status" do
-    FactoryGirl.build(:job, status: nil).should be_invalid
+  it "has a default status of 'new'" do
+    FactoryGirl.create(:job, status: nil).status.should == "new"
   end
   
   it "is invalid without a description" do

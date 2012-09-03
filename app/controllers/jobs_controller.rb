@@ -25,6 +25,8 @@ class JobsController < ApplicationController
   # GET /jobs/new.json
   def new
     @job = Job.new
+
+    # set defaults for form
     @default_bid_due = Time.now + 2.days
     @default_delivery_due = Time.now + 1.week
 
@@ -44,9 +46,6 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(params[:job])
     
-    # set status of job to "New"
-    @job.status = "new"
-
     respond_to do |format|
       if @job.save
         format.html { redirect_to jobs_path, notice: "'#{@job.jobname}' was successfully created." }

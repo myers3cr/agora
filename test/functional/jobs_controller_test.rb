@@ -17,8 +17,13 @@ class JobsControllerTest < ActionController::TestCase
   end
 
   test "should create job" do
+    @foo = Job.new
     assert_difference('Job.count') do
-      post :create, job: @job.attributes
+      @foo.jobname = "CR's new job"
+      @foo.description = 'Something'
+      @foo.bid_due = Time.now + 2.hours
+      @foo.delivery_due = Time.now + 2.days
+      post :create, job: @foo.to_param
     end
 
     assert_redirected_to jobs_path

@@ -9,7 +9,6 @@ class JobTest < ActiveSupport::TestCase
     job = Job.new
     assert job.invalid?
     assert job.errors[:jobname].any?
-    assert job.errors[:status].any?
     assert job.errors[:description].any?
     assert job.errors[:bid_due].any?
     assert job.errors[:delivery_due].any?
