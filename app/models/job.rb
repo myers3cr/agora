@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-  attr_accessible :bid_due, :category, :customer, :delivery_due, :description, :instructions, :jobname
+#  attr_accessible :bid_due, :category, :customer, :delivery_due, :description, :instructions, :jobname
 
   validates_presence_of :jobname
   validates_presence_of :description

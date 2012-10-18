@@ -17,16 +17,18 @@ class JobsControllerTest < ActionController::TestCase
   end
 
   test "should create job" do
+    Timecop.freeze
     @foo = Job.new
     assert_difference('Job.count') do
       @foo.jobname = "CR's new job"
       @foo.description = 'Something'
-      @foo.bid_due = Time.now + 2.hours
-      @foo.delivery_due = Time.now + 2.days
-      post :create, job: @foo.to_param
+      @foo.bid_due = Time.now.localtime + 1.hour + 1.second
+      @foo.delivery_due = Time.now.localtime + 2.days
+      post :create, job: @foo.attributes
     end
 
     assert_redirected_to jobs_path
+    Timecop.return
   end
 
   test "should show job" do
@@ -39,9 +41,7 @@ class JobsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update job" do
-    # put :update, id: @currency.to_param, currency: @currency.attributes
-    
+  test "should update job" do   
     put :update, id: @job.to_param, job: @job.attributes
     assert_redirected_to jobs_path
   end
