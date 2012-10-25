@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120619213245) do
+ActiveRecord::Schema.define(:version => 20121020171533) do
 
   create_table "currencies", :force => true do |t|
     t.string   "iso_code"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(:version => 20120619213245) do
     t.text     "content"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "org_types", :force => true do |t|
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20120619213245) do
 
   create_table "orgs", :force => true do |t|
     t.string   "name"
-    t.integer  "org_type_id", :limit => 255
+    t.decimal  "org_type_id"
     t.integer  "currency_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(:version => 20120619213245) do
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "org_id"
     t.string   "first_name"
     t.string   "last_name"

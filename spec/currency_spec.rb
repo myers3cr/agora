@@ -40,11 +40,11 @@ describe Currency do
   end
     
   it "is valid with a 32 character description" do
-    build(:currency, description: "12345678901234567890123456789012").should be_valid
+    build(:currency, description: "a" * 32).should be_valid
   end
   
   it "is invalid with a 33 character description" do
-      build(:currency, description: "123456789012345678901234567890123").should_not be_valid
+      build(:currency, description: "a" * 33).should_not be_valid
   end
   
   it "converts lowercase ISO to uppercase when saved" do

@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'Faker'
+
 Currency.delete_all
 Currency.create(iso_code: 'USD', description: 'US Dollar')
 Currency.create(iso_code: 'EUR', description: 'Euro')
@@ -42,7 +44,7 @@ Org.create(
 
 User.delete_all
 User.create(
-  name: 'admin',
+  username: 'admin',
   first_name: 'Admin',
   last_name: 'User',
   org_id: Org.find_by_name('Xerox').id,
@@ -52,7 +54,7 @@ User.create(
   password_confirmation: 'secret'
 )
 User.create(
-  name: 'buyer',
+  username: 'buyer',
   first_name: 'Buyer',
   last_name: 'User',
   org_id: Org.find_by_name('Demo Buyer').id,
@@ -62,7 +64,7 @@ User.create(
   password_confirmation: 'secret'
 )
 User.create(
-  name: 'supplier',
+  username: 'supplier',
   first_name: 'Suplier',
   last_name: 'User',
   org_id: Org.find_by_name('Demo Supplier').id,
@@ -70,4 +72,31 @@ User.create(
   phone: '(585) 555-1212',
   password: 'secret',
   password_confirmation: 'secret'
+)
+
+Message.delete_all
+Message.create(
+  headline: "Old Message",
+  content: Faker::Lorem.paragraph(10),
+  start_date: Time.now - 2.months,
+  end_date: Time.now - 1.month
+)
+Message.create(
+  headline: "Current Message",
+  content: Faker::Lorem.paragraph(10),
+  start_date: Time.now - 1.month,
+  end_date: Time.now + 1.month
+)
+Message.create(
+  headline: "Another Current Message",
+  content: Faker::Lorem.paragraph(10),
+  start_date: Time.now - 1.month,
+  end_date: Time.now + 1.month
+)
+Message.create(
+  headline: "Future Message",
+  content: Faker::Lorem.paragraph(10),
+  start_date: Time.now + 1.month,
+  end_date: Time.now + 2.months
+
 )
