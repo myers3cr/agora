@@ -3,7 +3,7 @@ FactoryGirl.define do
   sequence :iso_code do 
     str.succ!
   end
-  factory Currency do
+  factory :currency do
     iso_code
     description "Sample Currency"
   end

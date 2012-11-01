@@ -2,7 +2,7 @@
 
 one:
   jobname: MyString
-  category: MyString
+  category: <%= Job::CATEGORIES[0] %>
   customer: MyString
   description: MyString
   instructions: MyText
@@ -11,7 +11,7 @@ one:
 
 two:
   jobname: MyString
-  category: MyString
+  category: <%= Job::CATEGORIES[0] %>
   customer: MyString
   description: MyString
   instructions: MyText

@@ -21,6 +21,7 @@ class JobsControllerTest < ActionController::TestCase
     @foo = Job.new
     assert_difference('Job.count') do
       @foo.jobname = "CR's new job"
+      @foo.category = Job::CATEGORIES[0]
       @foo.description = 'Something'
       @foo.bid_due = Time.now.localtime + 1.hour + 1.second
       @foo.delivery_due = Time.now.localtime + 2.days

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory Org do
+  factory :org do
     name "Organization"
     org_type
     currency

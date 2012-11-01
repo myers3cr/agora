@@ -18,7 +18,7 @@
 	  </div>
 	  <div class="field">
 	    <%= f.label :category %><br />
-	    <%= f.text_field :category %>
+	    <%= f.select :category, Job::CATEGORIES, prompt: "-- Select --" %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :customer %><br />

@@ -1,7 +1,12 @@
 class Job < ActiveRecord::Base
 #  attr_accessible :bid_due, :category, :customer, :delivery_due, :description, :instructions, :jobname
 
+  CATEGORIES = ["Category 1",  "Category 2", "Category 3", "Category 4"]
+
   validates_presence_of :jobname
+
+  validates_inclusion_of :category, in: CATEGORIES
+
   validates_presence_of :description
   
   validate :bid_due_one_hour_in_future, :delivery_due_after_bid_due

@@ -1,11 +1,11 @@
 class Currency < ActiveRecord::Base
 
-  before_validation :upcase_iso
-
 # TODO update so can't delete if there are orgs using the currency
 
   has_many :orgs
   
+  before_validation :upcase_iso
+
   validates_uniqueness_of :iso_code
   validates_format_of :iso_code, :with => /^[A-Z]{3}$/, :message => "must be 3 uppercase letters"
   

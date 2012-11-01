@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory OrgType do
+  factory :org_type do
     name "Foonman"
   end
 end
