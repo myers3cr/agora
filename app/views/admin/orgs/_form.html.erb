@@ -14,7 +14,7 @@
 	<legend><%= controller.action_name.capitalize + " Organization" %></legend>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, autofocus: "autofocus" %>
   </div>
   <div class="field">
     <%= f.label :org_type, "Organization type" %><br />

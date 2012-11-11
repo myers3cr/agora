@@ -14,7 +14,7 @@
 		<legend><%= controller.action_name.capitalize + " Job" %></legend>
 	  <div class="field">
 	    <%= f.label :jobname, "Job name" %><br />
-	    <%= f.text_field :jobname %>
+	    <%= f.text_field :jobname, autofocus: "autofocus" %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :category %><br />

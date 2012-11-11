@@ -8,7 +8,7 @@
 	<%= form_tag do %>
 		<div class="field">
 	    <%= label_tag :username, "Username:" %><br />
-	    <%= text_field_tag :username, params[:username] %>
+	    <%= text_field_tag :username, params[:username], autofocus: "autofocus" %>
 	  </div>
 	  <div class="field">
 	    <%= label_tag :password, "Password:" %><br />
