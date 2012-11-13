@@ -1,5 +1,4 @@
 class Job < ActiveRecord::Base
-#  attr_accessible :bid_due, :category, :customer, :delivery_due, :description, :instructions, :jobname
 
   CATEGORIES = ["Category 1",  "Category 2", "Category 3", "Category 4"]
 
