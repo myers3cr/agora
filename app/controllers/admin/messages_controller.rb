@@ -46,7 +46,7 @@ class Admin::MessagesController < ApplicationController
     @message = Message.new(params[:message])
     respond_to do |format|
       if @message.save
-        format.html { redirect_to admin_messages_path, notice: 'Message was successfully created.' }
+        format.html { redirect_to admin_messages_url, notice: 'Message was successfully created.' }
         format.json { render json: @message, status: :created, location: @message }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class Admin::MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.update_attributes(params[:message])
-        format.html { redirect_to admin_messages_path, notice: 'Message was successfully updated.' }
+        format.html { redirect_to admin_messages_url, notice: 'Message was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -45,7 +45,7 @@ class Admin::CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.save
-        format.html { redirect_to admin_currencies_path, notice: "Currency #{@currency.iso_code} was successfully created." }
+        format.html { redirect_to admin_currencies_url, notice: "Currency #{@currency.iso_code} was successfully created." }
         format.json { render json: @currency, status: :created, location: @currency }
       else
         format.html { render action: "new" }

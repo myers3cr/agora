@@ -47,7 +47,7 @@ class Admin::OrgsController < ApplicationController
 
     respond_to do |format|
       if @org.save
-        format.html { redirect_to admin_orgs_path, notice: "Org #{@org.name} was successfully created." }
+        format.html { redirect_to admin_orgs_url, notice: "Org #{@org.name} was successfully created." }
         format.json { render json: @org, status: :created, location: @org }
       else
         format.html { render action: "new" }
