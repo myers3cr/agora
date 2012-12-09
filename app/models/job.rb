@@ -4,7 +4,7 @@ class Job < ActiveRecord::Base
 
   CATEGORIES = ["Category 1",  "Category 2", "Category 3", "Category 4"]
 
-  validates_presence_of :jobname
+  validates_presence_of :job_name
 
   validates_inclusion_of :category, in: CATEGORIES
 

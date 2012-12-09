@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory Job do
-    jobname "Open Item Job"
+    job_name "Open Item Job"
     status "New"
     category Job::CATEGORIES[0]
     description "Something or other"

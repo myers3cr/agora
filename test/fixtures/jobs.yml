@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  jobname: MyString
+  job_name: MyString
   category: <%= Job::CATEGORIES[0] %>
   customer: MyString
   description: MyString
@@ -10,7 +10,7 @@ one:
   delivery_due: <%= Time.now + 1.day %>
 
 two:
-  jobname: MyString
+  job_name: MyString
   category: <%= Job::CATEGORIES[0] %>
   customer: MyString
   description: MyString

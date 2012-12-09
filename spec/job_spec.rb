@@ -11,7 +11,7 @@ describe Job do
   end
 
   it "is invalid without a jobname" do
-    build(:job, jobname: nil).should be_invalid
+    build(:job, job_name: nil).should be_invalid
   end
   
   it "has a default status of 'new'" do

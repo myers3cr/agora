@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121020171533) do
+ActiveRecord::Schema.define(:version => 20121209134215) do
+
+  create_table "cp_specs", :force => true do |t|
+    t.string   "cp_type"
+    t.integer  "quantity"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "currencies", :force => true do |t|
     t.string   "iso_code"
@@ -21,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20121020171533) do
   end
 
   create_table "jobs", :force => true do |t|
-    t.string   "jobname"
+    t.string   "job_name"
     t.string   "status"
     t.string   "category"
     t.string   "customer"
@@ -29,8 +37,11 @@ ActiveRecord::Schema.define(:version => 20121020171533) do
     t.text     "instructions"
     t.datetime "bid_due"
     t.datetime "delivery_due"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "job_type"
+    t.integer  "spec_id"
+    t.string   "spec_type"
   end
 
   create_table "messages", :force => true do |t|
@@ -40,6 +51,14 @@ ActiveRecord::Schema.define(:version => 20121020171533) do
     t.datetime "end_date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "oi_specs", :force => true do |t|
+    t.string   "service"
+    t.integer  "quantity"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "org_types", :force => true do |t|
