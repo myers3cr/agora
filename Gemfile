@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -30,20 +30,22 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.11.0'
-	gem 'factory_girl_rails', '~> 3.5.0'
-	gem 'guard-rspec', '~> 1.2.0'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'shoulda'
+	gem 'factory_girl_rails'
+	gem 'guard-rspec'
+	gem 'rb-fsevent'
+	gem 'growl'
 end
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 	gem 'minitest'
-	# crm added these
-	gem 'faker', '~> 1.0.1'
-	gem 'capybara', '~> 1.1.2'
-	gem 'database_cleaner', '~> 0.8.0'
-	gem 'launchy', '~> 2.1.0'
+	gem 'faker'
+	gem 'database_cleaner'
+	gem 'launchy'
 	gem 'timecop'
 end
 

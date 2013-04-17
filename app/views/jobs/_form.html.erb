@@ -38,7 +38,7 @@
 	  </div>
 	  <div class="field">
 	    <%= f.label :delivery_due %><br />
-	    <%= f.datetime_select :delivery_due, default: @default_delivery_due, discard_minute: true %>
+	    <%= f.datetime_select :delivery_due, default: @default_delivery_due, discard_minute: true, ampm: true %>
 	  </div>
 	</fieldset>
 
