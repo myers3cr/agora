@@ -4,7 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Status</th>
-    <th>Category</th>
+    <th>Job Type</th>
     <th>Customer</th>
     <th>Bid Due</th>
     <th></th>
@@ -14,10 +14,10 @@
 <% @jobs.each do |job| %>
   <tr>
     <td><%= job.job_name %></td>
-		<td><%= job.status %></td>
-		<td><%= job.category %></td>
+		<td><%= job.status.capitalize %></td>
+		<td><%= job.spec_type %></td>
 		<td><%= job.customer %></td>
-		<td><%= job.bid_due %></td>
+		<td><%= distance_of_time_in_words_to_now(job.bid_due) %></td>
     <td class="icon"><%= link_to (image_tag("pencil.png", :class => "icon")), edit_job_path(job) %></td>
     <td class="icon"><%= link_to (image_tag("delete.png", :class => "icon")), job_path(job), data: { confirm: 'Are you sure?', method: :delete } %></td>
   </tr>

@@ -13,10 +13,13 @@
 	<fieldset>
 		<legend><%= controller.action_name.capitalize + " Job" %></legend>
 	  <div class="field">
-	    <%= f.label :job_name, "Job name" %><br />
+	    <%= f.label :job_name %><br />
 	    <%= f.text_field :job_name, autofocus: "autofocus" %>
 	  </div>
 	  <div class="field">
+      <%= f.label :spec_type, "Job type" %><br />
+      <%= f.select :spec_type, Job::SPEC_TYPES, prompt: "-- Select --" %>
+
 	    <%= f.label :category %><br />
 	    <%= f.select :category, Job::CATEGORIES, prompt: "-- Select --" %>
 	  </div>

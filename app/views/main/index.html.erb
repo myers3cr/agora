@@ -6,7 +6,7 @@
 	<% else @messages.each do |message| %>
 		<div class="message">
 			<h3 class="headline" ><%= message.headline %></h3>
-			<p class="small" >Posted: <%= message.start_date %></p>
+			<p class="small" >Posted: <%= time_ago_in_words(message.start_date) %> ago</p>
 			<p><%= message.content %></p>
 		</div> <!-- end message div -->
 	<% end %>

@@ -2,7 +2,9 @@
 
 one:
   job_name: MyString
+  status: MyString
   category: <%= Job::CATEGORIES[0] %>
+  spec_type: <%= Job::SPEC_TYPES[0] %>
   customer: MyString
   description: MyString
   instructions: MyText
@@ -11,7 +13,9 @@ one:
 
 two:
   job_name: MyString
+  status: MyString
   category: <%= Job::CATEGORIES[0] %>
+  spec_type: <%= Job::SPEC_TYPES[0] %>
   customer: MyString
   description: MyString
   instructions: MyText
