@@ -3,7 +3,7 @@ class Job < ActiveRecord::Base
   # attr_accessible :jobname, :status, :bid_due, :delivery_due, :description, :category, :customer, :instructions
 
   CATEGORIES = ["Category 1",  "Category 2", "Category 3", "Category 4"]
-  SPEC_TYPES = ["Open Item", "Commercial Print"]
+  SPEC_TYPES = ["open_item", "commercial_print"]
 
   validates_presence_of :job_name
 

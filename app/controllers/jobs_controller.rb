@@ -48,7 +48,7 @@ class JobsController < ApplicationController
     
     respond_to do |format|
       if @job.save
-        format.html { redirect_to jobs_path, notice: "'#{@job.job_name}' was successfully created." }
+        format.html { redirect_to spec_path }
         format.json { render json: @job, status: :created, location: @job }
       else
         format.html { render action: "new" }
@@ -83,5 +83,11 @@ class JobsController < ApplicationController
       format.html { redirect_to jobs_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def spec_path 
+    { :controller => "#{@job.spec_type}".pluralize, :action => "new", :id => @job.id }
   end
 end
