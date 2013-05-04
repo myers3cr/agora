@@ -6,15 +6,10 @@ class Job < ActiveRecord::Base
   SPEC_TYPES = ["open_item", "commercial_print"]
 
   validates_presence_of :job_name
-
   validates_inclusion_of :spec_type, in: SPEC_TYPES
-
   validates_inclusion_of :category, in: CATEGORIES
-
   validates_presence_of :description
-  
   validate :bid_due_one_hour_in_future, :delivery_due_after_bid_due
-  
   validates_presence_of :status 
   
   before_validation do |job|

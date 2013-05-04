@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420133040) do
+ActiveRecord::Schema.define(:version => 20130430184018) do
 
   create_table "cp_specs", :force => true do |t|
     t.string   "cp_type"
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(:version => 20130420133040) do
     t.string   "service"
     t.integer  "quantity"
     t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "open_items", :force => true do |t|
+    t.integer  "quantity"
+    t.string   "category"
+    t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

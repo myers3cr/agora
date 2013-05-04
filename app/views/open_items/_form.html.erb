@@ -1,0 +1,32 @@
+<%= form_for @open_item do |f| %>
+  <% if @open_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@open_item.errors.count, "error") %> prohibited this job from being saved:</h2>
+      <ul>
+      <% @open_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend><%= controller.action_name.capitalize + " Open Item" %></legend>
+    <div class="field">
+      <%= f.label :quantity %><br />
+      <%= f.text_field :quantity, autofocus: "autofocus" %>
+    </div>
+    <div class="field">
+      <%= f.label :category %><br />
+      <%= f.select :category, OpenItem::CATEGORIES, prompt: "-- Select --" %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_field :description %>
+    </div>
+  </fieldset>
+
+    <div class="actions">
+      <%= f.submit "Save" %>&nbsp;<%= link_to 'Cancel', open_items_path %>
+    </div>
+<% end %>
