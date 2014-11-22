@@ -2,10 +2,10 @@ Agora::Application.routes.draw do
 
   root :to => 'main#index'
   get "main" => 'main#index'
+
   resources :jobs
     resources :open_items
     resources :commercial_print
-
 
   controller :sessions do
     get 'login' => :new
