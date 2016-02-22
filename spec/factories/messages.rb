@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :message do
-    headline "Test message headlibe"
+    headline "Test message headline"
     content "Test message content."
     start_date Time.now - 1.day
     end_date Time.now + 1.day

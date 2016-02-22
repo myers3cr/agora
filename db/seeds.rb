@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'Faker'
+require 'faker'
 
 Currency.delete_all
 Currency.create(iso_code: 'USD', description: 'US Dollar')
