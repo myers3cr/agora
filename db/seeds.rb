@@ -27,7 +27,7 @@ OrgType.create(name: 'Supplier')
 
 Org.delete_all
 Org.create(
-  name:'Xerox',
+  name:'PinchPoint',
   org_type_id: OrgType.find_by_name('Admin').id,
   currency_id: Currency.find_by_iso_code('USD').id
 )
@@ -47,7 +47,7 @@ User.create(
   username: 'admin',
   first_name: 'Admin',
   last_name: 'User',
-  org_id: Org.find_by_name('Xerox').id,
+  org_id: Org.find_by_name('PinchPoint').id,
   email: 'admin@nowhere.com',
   phone: '(585) 555-1212',
   password: 'secret',
