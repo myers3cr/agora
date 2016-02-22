@@ -44,7 +44,6 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 	gem 'minitest'
-	gem 'faker'
 	gem 'database_cleaner'
 	gem 'launchy'
 	gem 'timecop'
@@ -52,7 +51,9 @@ end
 
 gem 'will_paginate', '~> 3.0'
 gem 'simple_form'
+gem 'faker' # used to generate test and seed messages
 
-# following items for Heroky
+
+# following items for Heroku
 gem 'rails_12factor', group: :production
 ruby '2.0.0'
